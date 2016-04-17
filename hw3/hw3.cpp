@@ -129,7 +129,7 @@ int main(){
 	stack<int**> DFSstack;
 	//DFSstack.push(nonogram);
 	//int** NowNonogram;
-	for(int i = 0; i < row; i++){
+	/*for(int i = 0; i < row; i++){
 		for(int j = 0; j < column; j++){
 			cout << nonogram[i][j] << " ";
 		}
