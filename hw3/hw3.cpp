@@ -1,3 +1,4 @@
+
 #include <iostream>
 #include <fstream>
 #include <cstring>
@@ -167,6 +168,7 @@ int main(){
 	NowRow = new int[column + 1];
 	int NowRowNum = 0;
 	int PreRowNum = 0;
+	int TopRowNum = 0;
 	for(int i = 0; i < row; i++){
 		TempNonogram[i] = new int[column];
 		copy(nonogram[i], nonogram[i] + column, TempNonogram[i]);
@@ -182,11 +184,17 @@ int main(){
 		NowRow = DFSstack.top();
 		DFSstack.pop();
 		NowRowNum = NowRow[column];
+		if(NowRowNum > TopRowNum) TopRowNum = NowRowNum;
 		/*check the Now Num, if NowNum < PreNum means that the row is tracing back.
 		  so use cover the Row at NowNum with original nonogram Row, or the error judge will happen.
 		*/
 		if(PreRowNum > NowRowNum) 
-			copy(nonogram[NowRowNum + 1], nonogram[NowRowNum + 1] + column, TempNonogram[NowRowNum + 1]);
+			{
+				for(int i = PreRowNum; i <= TopRowNum; i++){
+					copy(nonogram[i], nonogram[i] + column, TempNonogram[i]);
+				}
+				
+			}
 		//cerr << DFSstack.size() << endl;
 		PreRowNum = NowRowNum;
 		//use new line to switch original row at Temp.
@@ -204,8 +212,7 @@ int main(){
 				cout << setw(3) << right << TempNonogram[i][j];
 		}
 		cout << endl;
-	}
-	cout << endl;*/
+	}*/
 		//no use, delete
 		delete []NowRow;
 		// last row check the answer.
@@ -251,9 +258,9 @@ int main(){
 	/*
 	for(int i = 0; i < row; i++){
 		for(int j = 0; j < column; j++){
-			if(TempNonogram[i][j] == 1){
+			if(nonogram[i][j] == 1){
 				cout << "#";
-			}else if(TempNonogram[i][j] == 0)
+			}else if(nonogram[i][j] == 0)
 				cout << ".";
 				else cout << " ";
 		}
@@ -523,4 +530,6 @@ bool ColumnCheckPro(int **Now, int Row, int Column, vector<int> *ColumnRestricti
 	}
 	return 1;
 }
+
+
 
