@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">台北政府資訊</string>
+    <string name="toast">Wait for a while</string>
+    <string name="string_map">地圖</string>
+    <string name="PrePage">上一頁</string>
+    <string name="google_maps_key" translatable="false" templateMergeStrategy="preserve">AIzaSyAL5lrxgdBwkamAmIXGAPeIl1KFJrZrggU</string>
+</resources>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="454dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:scrollbars = "vertical"
+                android:id="@+id/dataView" />
+        </ScrollView>
+
+    </TableLayout>
+
+    <TableRow
+        android:id="@+id/ButtonLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:padding="5dp"
+        android:stretchColumns="0,1"
+        android:weightSum="1">
+
+        <Button
+            android:id="@+id/Map"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="@string/string_map"
+            android:textAlignment="center" />
+    </TableRow>>
+
+</LinearLayout>
